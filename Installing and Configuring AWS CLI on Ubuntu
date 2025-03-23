@@ -1,76 +1,59 @@
-
 This guide explains how to install AWS CLI on a Ubuntu-based EC2 instance and configure it for use.
 
-
-
-1. Check if AWS CLI is Installed**
-Run the following command to check if AWS CLI is already installed:
+1. Check if AWS CLI is Installed
+   Run the following command to check if AWS CLI is already installed:
 
 aws --version
 
 If you see an error like `Command 'aws' not found`, follow the installation steps below.
 
+2. Install AWS CLI Manually
+   Since `awscli` is sometimes unavailable in the default package repository, install it manually.
 
-
-2. Install AWS CLI Manually**
-Since `awscli` is sometimes unavailable in the default package repository, install it manually.
-
-Step 1: Update System Packages**
+Step 1: Update System Packages
 
 sudo apt update && sudo apt upgrade -y
 
-
-Step 2: Download AWS CLI Installer**
+Step 2: Download AWS CLI Installer
 
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 
-
-
-Step 3: Install Unzip (If Not Installed)**
+Step 3: Install Unzip (If Not Installed)
 
 sudo apt install unzip -y
 
-
-
-Step 4: Extract the AWS CLI Installer**
+Step 4: Extract the AWS CLI Installer
 
 unzip awscliv2.zip
 
-
-
-Step 5: Install AWS CLI**
+Step 5: Install AWS CLI
 
 sudo ./aws/install
 
-
-
-Step 6: Verify the Installation**
+Step 6: Verify the Installation
 
 aws --version
 
 Expected output:
 aws-cli/2.x.x Python/x.x.x Linux/x86_64
 
-
-Step 7: Add AWS CLI to System Path (If Necessary)**
+Step 7: Add AWS CLI to System Path (If Necessary)
 If you still get `Command 'aws' not found`, add AWS CLI to your PATH:
 
 echo 'export PATH=$PATH:/usr/local/bin' >> ~/.bashrc
 source ~/.bashrc
 
-
-
-
-3. Configure AWS CLI**
-Once AWS CLI is installed, configure it with your AWS credentials:
+3. Configure AWS CLI
+   Once AWS CLI is installed, configure it with your AWS credentials:
 
 aws configure
 
 You will be prompted to enter:
-- AWS Access Key ID**
-- AWS Secret Access Key**
-- Default region** (e.g., `us-east-1`)
-- Default output format** (e.g., `json`)
+
+- AWS Access Key ID\*\*
+- AWS Secret Access Key\*\*
+- Default region\*\* (e.g., `us-east-1`)
+- Default output format\*\* (e.g., `json`)
 
 To verify the configuration:
 
@@ -78,20 +61,12 @@ aws s3 ls
 
 If correctly configured, it should list your S3 buckets.
 
--------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
+---
 
 You have successfully installed AWS CLI, configured it. This guide ensures a smooth AWS CLI setup on Ubuntu for managing AWS resources efficiently.
-
-
-
 
 Author
 Boris Jacobs
 
 License
 This project is licensed under the MIT License.
-
