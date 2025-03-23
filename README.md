@@ -1,2 +1,3 @@
 # Bash-line
-Bash Scripting Codes and Helps/demos
+
+Bash Scripting Codes and Helps/demos.
